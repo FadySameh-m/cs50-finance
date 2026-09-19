@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+<h2>Stock Quote</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Symbol</th>
+        <td>{{ stock.symbol }}</td>
+    </tr>
+
+    <tr>
+        <th>Name</th>
+        <td>{{ stock.name }}</td>
+    </tr>
+
+    <tr>
+        <th>Price</th>
+        <td>{{ stock.price | usd }}</td>
+    </tr>
+</table>
+
+<a href="/quote" class="btn btn-secondary">Search Again</a>
+
+{% endblock %}

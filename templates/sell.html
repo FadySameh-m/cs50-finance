@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+<h2>Sell Stock</h2>
+
+{% if symbols %}
+
+<form action="/sell" method="post" class="form-container">
+    <div class="mb-3">
+        <label for="symbol" class="form-label">Symbol</label>
+
+        <select class="form-select" id="symbol" name="symbol" required>
+            <option value="">Select a symbol</option>
+
+            {% for symbol in symbols %}
+                <option value="{{ symbol }}">{{ symbol }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="shares" class="form-label">Shares</label>
+        <input
+            class="form-control"
+            id="shares"
+            name="shares"
+            min="1"
+            type="number"
+            required
+        >
+    </div>
+
+    <button class="btn btn-danger" type="submit">Sell</button>
+</form>
+
+{% else %}
+
+<div class="alert alert-info">
+    You do not own any stocks to sell.
+</div>
+
+{% endif %}
+
+{% endblock %}

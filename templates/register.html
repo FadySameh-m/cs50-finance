@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+<h2>Register</h2>
+
+<form action="/register" method="post" class="form-container">
+    <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input
+            autocomplete="off"
+            autofocus
+            class="form-control"
+            id="username"
+            name="username"
+            type="text"
+            required
+        >
+    </div>
+
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input
+            class="form-control"
+            id="password"
+            name="password"
+            type="password"
+            required
+        >
+    </div>
+
+    <div class="mb-3">
+        <label for="confirmation" class="form-label">
+            Confirm Password
+        </label>
+        <input
+            class="form-control"
+            id="confirmation"
+            name="confirmation"
+            type="password"
+            required
+        >
+    </div>
+
+    <button class="btn btn-success" type="submit">Register</button>
+</form>
+
+{% endblock %}
